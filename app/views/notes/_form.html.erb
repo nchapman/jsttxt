@@ -1,0 +1,27 @@
+<div class="note_form">
+  <%= form.error_messages %>
+  <p>
+    <%= form.text_field :title, :class => "title", :placeholder => "title" %>
+  </p>
+  <!--p>
+    <a href="#" title="Bold" onclick="jstxt.insertTag('note_body', '**', '**'); return false;">Bold</a>
+    <a href="#" title="Italic" onclick="jstxt.insertTag('note_body', '*', '*'); return false;">Italic</a>
+    <a href="#" title="Link" onclick="jstxt.insertTag('note_body', '[', '](' + prompt('Enter the URL:', 'http://') + ')'); return false;">Link</a>
+    <a href="#" title="H1" onclick="jstxt.insertTag('note_body', '# ', ' #'); return false;">H1</a>
+    <a href="#" title="H2" onclick="jstxt.insertTag('note_body', '## ', ' ##'); return false;">H2</a>
+    <a href="#" title="H3" onclick="jstxt.insertTag('note_body', '### ', ' ###'); return false;">H3</a>
+    <a href="#" title="Code" onclick="jstxt.insertTag('note_body', '`', '`'); return false;">Code</a>
+  </p-->
+  <p>
+    <%= form.text_field :tag_list, :class => "tags", :placeholder => "tags separated by commas" %>
+  </p>
+  <p>
+    <%= form.text_area :body, :class => "body" %>
+  </p>
+  <p>
+    <%= form.check_box :public %> <%= form.label :public %>
+  </p>
+  <p>
+    <%= form.submit "Save" %>
+  </p>
+</div>

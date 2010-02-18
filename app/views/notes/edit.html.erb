@@ -1,0 +1,6 @@
+<% form_for(@note) do |f| %>
+  <%= render :partial => "form", :object => f %>
+<% end %>
+
+<%= link_to 'Show', @note %> |
+<%= link_to 'Back', notes_path %>
