@@ -73,6 +73,7 @@ p.notice {
   border: 1px solid #AAC1EC;
   border-radius: .5em;
   color: #333;
+  display: none;
   font-size: 85%;
   line-height: 1em;
   padding: .5em .8em;

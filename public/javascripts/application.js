@@ -1,7 +1,7 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
-var jstxt = {
+var jsttxt = {
   insertTag: function(textarea, start, end) {
     textarea = $(textarea);
     
@@ -50,13 +50,13 @@ var jstxt = {
 };
 
 // activate links
-jstxt.addTextFilter(function(body_html) {
-  return text.replace(/(https?:\/\/[^\s]+)/g, "<a href=\"$1\">$1</a>");
+jsttxt.addTextFilter(function(body_html) {
+  return body_html.replace(/(https?:\/\/[^\s]+)/g, "<a href=\"$1\">$1</a>");
 });
 
 // UPS tracking
-jstxt.addTextFilter(function(body_html) {
+jsttxt.addTextFilter(function(body_html) {
   pattern = /\b(1Z ?[0-9A-Z]{3} ?[0-9A-Z]{3} ?[0-9A-Z]{2} ?[0-9A-Z]{4} ?[0-9A-Z]{3} ?[0-9A-Z]|[\dT]\d\d\d ?\d\d\d\d ?\d\d\d)\b/ig;
 
-  return text.replace(pattern, "<a href=\"http://wwwapps.ups.com/WebTracking/processInputRequest?TypeOfInquiryNumber=T&InquiryNumber1=$1\">$1</a>");
+  return body_html.replace(pattern, "<a href=\"http://wwwapps.ups.com/WebTracking/processInputRequest?TypeOfInquiryNumber=T&InquiryNumber1=$1\">$1</a>");
 });
