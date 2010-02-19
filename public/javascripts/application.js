@@ -51,7 +51,7 @@ var jsttxt = {
 
 // activate links
 jsttxt.addTextFilter(function(body_html) {
-  return body_html.replace(/(https?:\/\/[^\s]+)/g, "<a href=\"$1\">$1</a>");
+  return body_html.replace(/(>|\s)(https?:\/\/[^\s]+)/g, "<a href=\"$2\">$2</a>");
 });
 
 // UPS tracking

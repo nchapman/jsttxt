@@ -7,6 +7,11 @@ class Note < ActiveRecord::Base
   
   validates_presence_of :title, :body
   
+  define_index do
+    indexes :title
+    indexes :body
+  end
+  
   def body=(input)
     self[:body] = input
     self[:body_html] = markdown(input)
