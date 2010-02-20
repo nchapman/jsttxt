@@ -1,0 +1,32 @@
+/* Columns */
+
+.two_columns, .three_columns, .four_columns, .five_columns
+{
+    overflow: hidden;
+    width: auto;
+}
+
+.two_columns .column, .three_columns .column, .four_columns .column, .five_columns .column
+{
+    float: left;
+}
+
+.two_columns .column
+{
+    width: 50%;
+}
+
+.three_columns .column
+{
+    width: 33%;
+}
+
+.four_columns .column
+{
+    width: 25%;
+}
+
+.five_columns .column
+{
+    width: 20%;
+}
