@@ -1,26 +1,45 @@
-<% if @notes.size > 0 %>
-  <div class="note_list">
-  <% current_date = nil %>
-  <% @notes.each do |note| %>
-    <% if current_date != note.created_at.strftime("%B %d, %Y") %>
-      <% current_date = note.created_at.strftime("%B %d, %Y") %>
-      <h2 class="date"><%= current_date %></h2>
-    <% end %>
-    <div class="note">
-      <h3><%= link_to h(note.title), note %></h3>
-      <% if note.tag_list.size > 0 %>
-        <div class="tags">
-          <% note.tag_list.each do |tag| %>
-            <span><%= tag %></span>
+<style>
+  .column.first {
+    width: 75%;
+  }
+  
+  .column.last {
+    width: 25%;
+  }
+</style>
+
+<div class="two_columns">
+  <section class="column first">
+    <% if @notes.size > 0 %>
+      <div class="note_list">
+      <% current_date = nil %>
+      <% @notes.each do |note| %>
+        <% if current_date != note.created_at.strftime("%B %d, %Y") %>
+          <% current_date = note.created_at.strftime("%B %d, %Y") %>
+          <h2 class="date"><%= current_date %></h2>
+        <% end %>
+        <div class="note">
+          <h3><%= link_to h(note.title), note %></h3>
+          <% if false and note.tag_list.size > 0 %>
+            <div class="tags">
+              <% note.tag_list.each do |tag| %>
+                <span><%= tag %></span>
+              <% end %>
+            </div>
           <% end %>
+          <div class="summary">
+            <%= smash(note.body_html) %><span class="ellipsis">&hellip;</span>
+          </div>
         </div>
       <% end %>
-      <div class="summary">
-        <%= smash(note.body_html) %><span class="ellipsis">&hellip;</span>
       </div>
-    </div>
-  <% end %>
-  </div>
-<% else %>
-<p>You don't have any notes yet. <%= link_to "Create a note", new_note_path %> to get started!</p>
-<% end %>
+    <% else %>
+    <p>You don't have any notes yet. <%= link_to "Create a note", new_note_path %> to get started!</p>
+    <% end %>
+  </section>
+  <section class="column last">
+    <form action="/notes/search/"> 
+    	<input type="text" name="query" value="<%= @query %>" /> 
+    </form> 
+  </section>
+</div>

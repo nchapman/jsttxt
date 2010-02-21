@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user, :except => :show
   
   # GET /notes
   # GET /notes.xml
@@ -8,18 +8,22 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @notes }
+      #format.xml  { render :xml => @notes }
     end
   end
 
   # GET /notes/1
   # GET /notes/1.xml
   def show
-    @note = current_user.notes.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @note }
+    @note = Note.find(params[:id])
+    
+    if @note.public? || (current_user && @note.user_id == current_user.id)
+      respond_to do |format|
+        format.html # show.html.erb
+        #format.xml  { render :xml => @note }
+      end
+    else
+      require_user
     end
   end
 
@@ -32,7 +36,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @note }
+      #format.xml  { render :xml => @note }
     end
   end
 
@@ -52,10 +56,10 @@ class NotesController < ApplicationController
       if @note.save
         flash[:notice] = 'Note was successfully saved.'
         format.html { redirect_to(@note) }
-        format.xml  { render :xml => @note, :status => :created, :location => @note }
+        #format.xml  { render :xml => @note, :status => :created, :location => @note }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @note.errors, :status => :unprocessable_entity }
+        #format.xml  { render :xml => @note.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -69,10 +73,10 @@ class NotesController < ApplicationController
       if @note.update_attributes(params[:note])
         flash[:notice] = 'Note was successfully saved.'
         format.html { redirect_to(@note) }
-        format.xml  { head :ok }
+        #format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @note.errors, :status => :unprocessable_entity }
+        #format.xml  { render :xml => @note.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -85,7 +89,17 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(notes_url) }
-      format.xml  { head :ok }
+      #format.xml  { head :ok }
+    end
+  end
+  
+  def search
+    @query = params[:query]
+    @notes = Note.search(@query)
+    
+    respond_to do |format|
+      format.html
+      #format.xml  { render :xml => @notes }
     end
   end
 end

@@ -1,6 +1,10 @@
 log/*.log
 tmp/**/*
+*.pid
 doc/api
 doc/app
 db/*.sqlite3
 .DS_Store
+config/*.sphinx.conf
+db/sphinx
+*.esproj

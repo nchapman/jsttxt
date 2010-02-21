@@ -1,16 +1,14 @@
 @import url(http://yui.yahooapis.com/combo?3.0.0/build/cssreset/reset-min.css&3.0.0/build/cssfonts/fonts-min.css&3.0.0/build/cssbase/base-context-min.css);
+@import url(/stylesheets/albi.css);
 
 article, aside, dialog, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
-body, input {
+body {
   color: #333;
   font-family: "museo-sans-1","museo-sans-2", Helvetica, Arial, sans-serif;
-  font-size: 108%;
+  font-size: 16px;
   font-weight: 300;
-}
-
-body {
-  line-height: 160%;
+  line-height: 1.6em;
 }
 
 a {
@@ -27,8 +25,12 @@ h1, h2, h3, h4, h5, h6, h7, h8 {
   font-family: "museo-slab-1","museo-slab-2", Georgia, serif;
 }
 
+.match {
+  background: yellow;
+}
+
 .note h2.title {
-  font-size: 146.5% !important;
+  font-size: 150% !important;
   font-weight: 900 !important;
   margin-bottom: 0 !important;
 }
@@ -75,7 +77,7 @@ p.notice {
   border-radius: .5em;
   color: #333;
   display: none;
-  font-size: 85%;
+  font-size: 81%;
   line-height: 1em;
   padding: .5em .8em;
   text-transform: lowercase;
@@ -92,7 +94,7 @@ p.notice {
 .note_list h2.date {
   border-bottom: 1px solid #eee;
   color: #555;
-  font-size: 68% !important;
+  font-size: 69% !important;
   font-weight: normal;
   letter-spacing: .09em;
   line-height: 140%;
@@ -101,7 +103,7 @@ p.notice {
 }
 
 .note_list .note h3 {
-  font-size: 123.1%;
+  font-size: 125%;
   font-weight: normal;
   line-height: 1em;
   margin: 0;
@@ -110,8 +112,8 @@ p.notice {
 .tags span {
   background: #D7E2F6;
   border: 1px solid #AAC1EC;
-  border-radius: 8px;
-  font-size: 11px;
+  -webkit-border-radius: 8px;
+  font-size: 69%;
   font-weight: 500;
   color: #111;
   padding: .1em .7em;
@@ -119,7 +121,7 @@ p.notice {
 
 .note_list .note .summary {
   color: #aaa;
-  font-size: 85%;
+  font-size: 88%;
   overflow: hidden;
   position: relative;
   white-space: nowrap;

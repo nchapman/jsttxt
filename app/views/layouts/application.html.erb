@@ -16,8 +16,9 @@
       <header>
         <h1><a href="/">jsttxt</a></h1>
         <nav class="user">
-          <%= link_to "new", new_note_path %> |
-          <a href="/account/edit">settings</a>
+          <% if current_user %>
+          <%= link_to "new", new_note_path %> | <a href="/account/edit">settings</a>
+          <% end %>
         </nav>
       </header>
       <section id="main" class="yui-cssbase">

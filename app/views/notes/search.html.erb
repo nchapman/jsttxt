@@ -1,0 +1,33 @@
+<style>
+  .column.first {
+    width: 75%;
+  }
+  
+  .column.last {
+    width: 25%;
+  }
+</style>
+
+<div class="two_columns">
+  <section class="column first">
+    <% if @notes.size > 0 %>
+      <div class="note_list">
+      <% @notes.each do |note| %>
+        <div class="note">
+          <h3><%= link_to note.excerpts.title, note %></h3>
+          <div class="excerpt">
+            <%= note.excerpts.body %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% else %>
+    <p>No results.</p>
+    <% end %>
+  </section>
+  <section class="column last">
+    <form action="/notes/search/"> 
+    	<input type="text" name="query" value="<%= @query %>" /> 
+    </form> 
+  </section>
+</div>

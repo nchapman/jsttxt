@@ -1,6 +1,6 @@
 <div class="note">
   <h2 class="title"><%=h @note.title %></h2>
-  <% if @note.tag_list.size > 0 %>
+  <% if logged_in? && @note.tag_list.size > 0 %>
     <div class="tags">
       <% @note.tag_list.each do |tag| %>
         <span><%= tag %></span>
@@ -12,9 +12,11 @@
   </div>
 </div>
 
-<script>
-  jsttxt.applyTextFilters();
-</script>
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+<% if logged_in? %>
+  <script>
+    jsttxt.applyTextFilters();
+  </script>
+  
+  <%= link_to 'Edit', edit_note_path(@note) %> |
+  <%= link_to 'Back', notes_path %>
+<% end %>
