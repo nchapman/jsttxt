@@ -8,3 +8,4 @@ db/*.sqlite3
 config/*.sphinx.conf
 db/sphinx
 *.esproj
+public/stylesheets/*
