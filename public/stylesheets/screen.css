@@ -2,13 +2,10 @@
 @import url(/stylesheets/albi.css);
 @import url(/extras/MooEditable/MooEditable.css);
 
-article, aside, dialog, figure, footer, header, hgroup, menu, nav, section { display: block; }
-
 body {
   color: #333;
-  font-family: "museo-sans-1","museo-sans-2", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
-  font-weight: 300;
   line-height: 1.6em;
 }
 
@@ -17,23 +14,13 @@ a {
   text-decoration: none;
 }
 
-strong, b {
-  font-weight: 700 !important;
-}
-
-h1, h2, h3, h4, h5, h6, h7, h8 {
-  color: #191919;
-  font-family: "museo-slab-1","museo-slab-2", Georgia, serif;
-}
-
 .match {
   background: yellow;
 }
 
 .note h2.title {
-  font-size: 150% !important;
-  font-weight: 900 !important;
-  margin-bottom: 0 !important;
+  font-size: 146%;
+  margin-bottom: 0;
 }
 
 .note #note_body {
@@ -77,33 +64,33 @@ p.notice {
   border-radius: .5em;
   color: #333;
   display: none;
-  font-size: 81%;
+  font-size: 85%;
   line-height: 1em;
   padding: .5em .8em;
   text-transform: lowercase;
 }
 
 .note_list {
-  line-height: 150%;
+  line-height: 146%;
 }
 
 .note_list .note {
-  margin-bottom: .6em;
+  margin-bottom: 1em;
 }
 
 .note_list h2.date {
   border-bottom: 1px solid #eee;
   color: #555;
-  font-size: 69% !important;
+  font-size: 77%;
   font-weight: normal;
   letter-spacing: .09em;
-  line-height: 140%;
-  margin: 2em 0 1.5em 0 !important;
+  line-height: 1.4em;
+  margin: 0 0 1.5em 0;
   text-transform: uppercase;
 }
 
 .note_list .note h3 {
-  font-size: 125%;
+  font-size: 123%;
   font-weight: normal;
   line-height: 1em;
   margin: 0;
@@ -113,15 +100,15 @@ p.notice {
   background: #D7E2F6;
   border: 1px solid #AAC1EC;
   -webkit-border-radius: 8px;
-  font-size: 69%;
+  font-size: 77%;
   font-weight: 500;
   color: #111;
   padding: .1em .7em;
 }
 
 .note_list .note .summary {
-  color: #aaa;
-  font-size: 88%;
+  color: #ccc;
+  font-size: 92%;
   overflow: hidden;
   position: relative;
   white-space: nowrap;
@@ -149,15 +136,8 @@ p.notice {
 }
 
 .note_form input.title {
-  font-family: "museo-slab-1","museo-slab-2", Georgia, serif;
-  font-size: 138.5%;
-  font-weight: 900;
-}
-
-.note_form input.title {
-  font-family: "museo-slab-1","museo-slab-2", Georgia, serif;
-  font-size: 138.5%;
-  font-weight: 900;
+  font-size: 138%;
+  font-weight: bold;
 }
 
 .note_form textarea.body {
