@@ -10,11 +10,12 @@ class Note < ActiveRecord::Base
   define_index do
     indexes :title
     indexes :body
+    indexes :cached_tag_list
   end
   
-  def body=(input)
-    self[:body] = input
-    self[:body_html] = markdown(input)
+  def body_html=(input)
+    self[:body_html] = input
+    self[:body] = input.gsub(/<\/?[^>]+>/, "")
   end
   
   def markdown(input)

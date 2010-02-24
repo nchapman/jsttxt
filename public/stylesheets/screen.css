@@ -1,5 +1,6 @@
 @import url(http://yui.yahooapis.com/combo?3.0.0/build/cssreset/reset-min.css&3.0.0/build/cssfonts/fonts-min.css&3.0.0/build/cssbase/base-context-min.css);
 @import url(/stylesheets/albi.css);
+@import url(/extras/MooEditable/MooEditable.css);
 
 article, aside, dialog, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
@@ -37,7 +38,6 @@ h1, h2, h3, h4, h5, h6, h7, h8 {
 
 .note #note_body {
   margin-top: .9em;
-  overflow: auto;
 }
 
 div#container {
@@ -143,7 +143,7 @@ p.notice {
   border: 1px solid #ddd;
   color: #191919;
   padding: 5px;
-  width: 98%;
+  width: 572px;
   -webkit-border-top-left-radius: 4px;
   -webkit-border-bottom-left-radius: 4px;
 }
@@ -165,8 +165,7 @@ p.notice {
   font-family: monospace;
   height: 30em;
   padding: 5px;
-  width: 98%;
+  width: 572px;
   -webkit-border-top-left-radius: 4px;
   -webkit-border-bottom-left-radius: 4px;
 }
-

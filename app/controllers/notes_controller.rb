@@ -32,7 +32,7 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
     
-    @note.body = params[:t] if params[:t]
+    @note.body_html = params[:t] if params[:t]
 
     respond_to do |format|
       format.html # new.html.erb

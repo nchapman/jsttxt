@@ -16,7 +16,7 @@
     <%= form.text_field :tag_list, :class => "tags", :placeholder => "tags separated by commas" %>
   </p>
   <p>
-    <%= form.text_area :body, :class => "body" %>
+    <%= form.text_area :body_html, :class => "body", :style => "height: 480px; width: 580px" %>
   </p>
   <p>
     <%= form.check_box :public %> <%= form.label :public %>
@@ -25,3 +25,9 @@
     <%= form.submit "Save" %>
   </p>
 </div>
+
+<script>
+window.addEvent('domready', function(){
+  $("note_body_html").mooEditable({ actions: "bold italic strikethrough | insertunorderedlist insertorderedlist indent outdent | undo redo | createlink unlink | toggleview", baseCSS: "", externalCSS: "/stylesheets/editable.css" });
+});
+</script>

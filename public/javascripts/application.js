@@ -1,6 +1,6 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-
+/*
 var jsttxt = {
   insertTag: function(textarea, start, end) {
     textarea = $(textarea);
@@ -60,3 +60,4 @@ jsttxt.addTextFilter(function(body_html) {
 
   return body_html.replace(pattern, "<a href=\"http://wwwapps.ups.com/WebTracking/processInputRequest?TypeOfInquiryNumber=T&InquiryNumber1=$1\">$1</a>");
 });
+*/
