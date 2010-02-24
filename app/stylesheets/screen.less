@@ -1,5 +1,6 @@
 @import "yui-combo.css";
 @import "extras";
+@import "moo_editable";
 
 body {
   color: #333;
@@ -58,7 +59,7 @@ p.notice {
 
 /* Note: Show */
 
-body.notes_show {
+#notes_show {
 
   h2.title {
     font-size: 146%;
@@ -73,7 +74,7 @@ body.notes_show {
 
 /* Notes: Index */
 
-body.notes_index {
+#notes_index {
 
   .note_list {
     line-height: 146%;
@@ -133,7 +134,7 @@ body.notes_index {
 
 }
 
-body.notes_edit, body.notes_new {
+#notes_edit, #notes_new {
 
   .note_form input.title, .note_form input.tags, .note_form textarea {
     border: 1px solid #ddd;

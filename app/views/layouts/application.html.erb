@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>jsttxt</title>
-    <%= javascript_include_tag "mootools" %>
-    <%= javascript_include_tag "MooEditable" %>
+    <%= javascript_include_tag "moo_tools" %>
+    <%= javascript_include_tag "moo_editable" %>
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "screen" %>
   </head>
-  <body class="<%= controller.controller_name %>_<%= controller.action_name %>">
+  <body id="<%= controller.controller_name %>_<%= controller.action_name %>">
     <div id="container">
       <header>
         <h1><a href="/">jsttxt</a></h1>
