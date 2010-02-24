@@ -1,5 +1,3 @@
-require 'rdiscount'
-
 class Note < ActiveRecord::Base
   acts_as_taggable
   
@@ -16,10 +14,5 @@ class Note < ActiveRecord::Base
   def body_html=(input)
     self[:body_html] = input
     self[:body] = input.gsub(/<\/?[^>]+>/, "")
-  end
-  
-  def markdown(input)
-    # Markdown + Github Flavored Markdown
-    RDiscount.new(GFM.parse(input), :smart, :filter_html).to_html
   end
 end

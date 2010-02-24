@@ -8,7 +8,7 @@
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "screen" %>
   </head>
-  <body>
+  <body class="<%= controller.controller_name %>_<%= controller.action_name %>">
     <div id="container">
       <header>
         <h1><a href="/">jsttxt</a></h1>
